@@ -1,4 +1,4 @@
-# Authentication and Payment Processing API
+# Authentication and Crypto Autopay Payment Processing API
 
 This web application allows users to securely store their subscriptions and manage autopayments using cryptocurrencies. The project leverages modern technologies and APIs to provide a seamless user experience for managing subscriptions.
 
