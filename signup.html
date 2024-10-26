@@ -86,18 +86,20 @@
    <img alt="Colorful Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299338299487555625/Remove_background_project_11.png?ex=671cd697&is=671b8517&hm=acf333f10b5faf09eb0eaeef999c77ddf94043c32146edcfdfa33e143b1c15df&"/>
   </div>
   <div class="container">
-   <i class="fas fa-user-circle">
-   </i>
-   <h2>
-    Sign up
-   </h2>
-   <input placeholder="Username" type="text"/>
-   <input placeholder="Email" type="email"/>
-   <input placeholder="Password" type="password"/>
-   <input placeholder="Confirm Password" type="password"/>
-   <button>
-    Submit
-   </button>
+    <form action="/signup" method="post">
+        <i class="fas fa-user-circle">
+        </i>
+        <h2>
+         Sign up
+        </h2>
+            <input placeholder="Username" name="username" type="text" required/>
+            <input placeholder="Email" name="email" type="email" required/>
+            <input placeholder="Password" name="password" type="password" required/>
+            <input placeholder="Confirm Password" name="confirm_password" type="password" required/>
+        <button type="submit">
+         Submit
+        </button>
+       </form>
   </div>
   <script>
     const symbols = ['$', '€', '£', '¥', '₹'];
