@@ -47,7 +47,6 @@
             border-bottom: 2px solid #0000ff;
             width: 100%;
             box-sizing: border-box;
-           
         }
         .header img {
             height: 50px;
@@ -69,12 +68,6 @@
         }
         .header .icons i {
             font-size: 32px;
-        }
-        .background-text {
-            position: absolute;
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
-            pointer-events: none; /* Prevent interaction with symbols */
         }
         .wallet {
             background: linear-gradient(to right, #A688F9, transparent);
@@ -106,29 +99,26 @@
             font-size: 24px;
             font-weight: bold;
         }
-                    .subscriptions {
+        .subscriptions {
             padding-top: 50px;
             background-color: #7968e358;
             text-align: center;
             padding-bottom: 50px;
             min-height: flex;
-            }
-
-            .subscriptions h2 {
+        }
+        .subscriptions h2 {
             color: #ffffff;
             padding-top: 20px;
             font-weight: 900;
             font-size: 2.5em;
-            }
-
-            .items {
+        }
+        .items {
             display: flex;
             justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
-            }
-
-            .item {
+        }
+        .item {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -139,38 +129,34 @@
             border-radius: 10px;
             box-shadow: 10px 10px 20px black;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .item:hover {
+            cursor: pointer;
+        }
+        .item:hover {
             transform: scale(1.05);
-            box-shadow: 15px 15px 25px rgba(20, 19, 19, 0.5);
-            }
-
-            .payment-card {
+            box -shadow: 15px 15px 25px rgba(20, 19 , 19, 0.5);
+        }
+        .payment-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            }
-
-            .payment-logo {
+        }
+        .payment-logo {
             height: 60px;
             width: 100px;
             margin-bottom: 15px;
-            }
-
-            .payment-text {
+        }
+        .payment-text {
             color: #ff0000;
             font-size: 1.2em;
             margin: 5px 0;
-            }
-
-            .payment-date {
+        }
+        .payment-date {
             color: #ffffff;
             font-size: 1em;
             margin: 5px 0;
-            }
-                    .payment-card {
+        }
+        .payment-card {
             width: 219px;
             height: 198px;
             background-color: #d7bfff;
@@ -219,13 +205,129 @@
                 text-align: center;
             }
         }
+        /* Modal Styles */
+        .modal {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #A7A9F1;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .plan1 {
+            background-color: #8FC1A9;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 20px;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .plan2 {
+            background-color: #FF6F61;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 20px;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .plan3 {
+            background-color: #4650d2;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 20px;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .plan4 {
+            background-color: #FFC107;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 20px;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .motto {
+            text-align: center;
+            flex-grow: 1; /* Allow motto to take up remaining space */
+            font-size: 27px;
+            color: #000000; /* Change color as needed */
+            margin: 0 20px; /* Add margin for spacing */
+        }
     </style>
+    <script>
+        function handlePayment() {
+            window.location.href = 'payment_success.html';
+        }
+
+        function openNetflixModal() {
+            document.querySelector('.netflix-modal').style.display = 'flex';
+        }
+
+        function closeNetflixModal() {
+            document.querySelector('.netflix-modal').style.display = 'none';
+        }
+
+        function openSpotifyModal() {
+            document.querySelector('.spotify-modal').style.display = 'flex';
+        }
+
+        function closeSpotifyModal() {
+            document.querySelector('.spotify-modal').style.display = 'none';
+ }
+
+        function openDisneyModal() {
+            document.querySelector('.disney-modal').style.display = 'flex';
+        }
+
+        function closeDisneyModal() {
+            document.querySelector('.disney-modal').style.display = 'none';
+        }
+
+        function openYouTubeModal() {
+            document.querySelector('.youtube-modal').style.display = 'flex';
+        }
+
+        function closeYouTubeModal() {
+            document.querySelector('.youtube-modal').style.display = 'none';
+        }
+    </script>
 </head>
 <body>
     <div class="header">
         <div class="title">
             <img alt="Logo" height="50" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299338299487555625/Remove_background_project_11.png?ex=671cd697&is=671b8517&hm=acf333f10b5faf09eb0eaeef999c77ddf94043c32146edcfdfa33e143b1c15df&" width="200"/>
         </div>
+        <div class="motto">Experience Freedom: Subscribe with Your Crypto!</div>
         <div class="icons">
             <i class="fas fa-bell"></i>
             <i class="fas fa-user-circle"></i>
@@ -234,7 +336,7 @@
     <div class="content">
         <div class="wallet">
             <div class="user-photo">
-                <img src="https://cdn.discordapp.com/attachments/1284572005764694137/1284845901201805312/HlyFK4Ip_2x.png?ex=671cd97e&is=671b87fe&hm=4a52c3a777608252e6c3314b6b1b63d201e81dfd5ef3bfcbd0d9106fe8226d14&" alt="User  Photo" class="user-image" />
+                <img src="https://cdn.discordapp.com/attachments/1284572005764694137/128484590120180531 2/HlyFK4Ip_2x.png?ex= 671 cd97e&is=671b87fe&hm=4a52c3a777608252e6c3314b6b1b63d201e81dfd5ef3bfcbd0d9106fe8226d14&" alt="User    Photo" class="user-image" />
             </div>
             <div class="details">
                 <p>User Name</p> <!-- You can replace this with the actual user name -->
@@ -251,80 +353,41 @@
         <div class="subscriptions">
             <h2>Subscriptions Available</h2>
             <div class="items">
-                   <!-- Crunchyroll Subscription Card -->
-                   <div class="item">
+                <!-- Netflix Subscription Card -->
+                <div class="item" onclick="openNetflixModal()">
                     <div class="payment-card">
                         <img class="payment-logo" alt="Crunchyroll Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827708436501/Netflix_Logo_Png_Symbol_PNG_Transparent_With_Clear_Background_ID_471554___TopPNG.jpeg?ex=671d2196&is=671bd016&hm=aba9bd4a715dc6edccd0feb44a8fc6877a0310e1f4b76b97568ff82d0ec1df4c&"/>
-                        <p class="payment-text">Crunchyroll</p>
+                        <p class="payment-text">Netflix</p>
                         <p class="payment-text">Next Payment Due</p>
                         <p class="payment-date">07 Nov 2023</p>
                     </div>
                 </div>
-                <!-- Crunchyroll Subscription Card -->
-                <div class="item">
+                <!-- Spotify Subscription Card -->
+                <div class="item" onclick="openSpotifyModal()">
                     <div class="payment-card">
-                        <img class="payment-logo" alt="Crunchyroll Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827708436501/Netflix_Logo_Png_Symbol_PNG_Transparent_With_Clear_Background_ID_471554___TopPNG.jpeg?ex=671d2196&is=671bd016&hm=aba9bd4a715dc6edccd0feb44a8fc6877a0310e1f4b76b97568ff82d0ec1df4c&"/>
-                        <p class="payment-text">Crunchyroll</p>
-                        <p class="payment-text">Next Payment Due</p>
-                        <p class="payment-date">07 Nov 2023</p>
-                    </div>
-                </div>
-                <!-- Youtube Subscription Card -->
-                <div class="item">
-                    <div class="payment-card">
-                        <img class="payment-logo" alt="Youtube Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Youtube</p>
-                        <p class="payment-text">Next Payment Due</p>
-                        <p class="payment-date">07 Nov 2023</p>
-                    </div>
-                </div>
-                 <!-- Spotify Subscription Card -->
-                 <div class="item">
-                    <div class="payment-card">
-                        <img class="payment-logo" alt="Spotify Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
+                        <img class="payment-logo" alt="Spotify Logo" src="https://storage.googleapis.com/a1aa/image/WMjy48kVJl4GIJV0cWUqjkkigvIpUmEvrddZeBsbhGpsebqTA.jpg" style="width: 50px; height: 50px;"/>
                         <p class="payment-text">Spotify</p>
                         <p class="payment-text">Next Payment Due</p>
                         <p class="payment-date">07 Nov 2023</p>
                     </div>
                 </div>
-                  <!-- Youtube Subscription Card -->
-                  <div class="item">
+                <!-- Youtube Subscription Card -->
+                <div class="item" onclick="openYouTubeModal()">
                     <div class="payment-card">
                         <img class="payment-logo" alt="Youtube Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Youtube</p>
+                        <p class="payment-text">Youtube</ p>
                         <p class="payment-text">Next Payment Due</p>
                         <p class="payment-date">07 Nov 2023</p>
                     </div>
                 </div>
-                  <!-- Youtube Subscription Card -->
-                  <div class="item">
+                <div class="item" onclick="openDisneyModal()">
                     <div class="payment-card">
-                        <img class="payment-logo" alt="Youtube Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Youtube</p>
+                        <img class="payment-logo" alt="Disney Logo" src="https://www.freepnglogos.com/uploads/disney-logo-png/disney-logo-png-transparent-background-4.png" style="width: 50px; height: 50px;"/>
+                        <p class="payment-text">Disney+</p>
                         <p class="payment-text">Next Payment Due</p>
                         <p class="payment-date">07 Nov 2023</p>
                     </div>
                 </div>
-                  <!-- Youtube Subscription Card -->
-                  <div class="item">
-                    <div class="payment-card">
-                        <img class="payment-logo" alt="Youtube Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Youtube</p>
-                        <p class="payment-text">Next Payment Due</p>
-                        <p class="payment-date">07 Nov 2023</p>
-                    </div>
-                </div>
-                  <!-- Youtube Subscription Card -->
-                  <div class="item">
-                    <div class="payment-card">
-                        <img class="payment-logo" alt="Youtube Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Youtube</p>
-                        <p class="payment-text">Next Payment Due</p>
-                        <p class="payment-date">07 Nov 2023</p>
-                    </div>
-                </div>
-               
-              
             </div>
         </div>
 
@@ -340,58 +403,135 @@
                         <p class="payment-date">07 Nov 2023</p>
                     </div>
                 </div>
-                 <!-- Bank Card -->
-                 <div class="item">
+                <div class="item">
                     <div class="payment-card">
                         <img class="payment-logo" alt="To Bank Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
                         <p class="payment-text">To Bank</p>
                         <p class="payment-date">07 Nov 2023</p>
                     </div>
                 </div>
-                <!-- Internet Service Card -->
                 <div class="item">
                     <div class="payment-card">
-                        <img class="payment-logo" alt="Internet Service Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Internet Service</p>
-                        <p class="payment-date">07 Nov 2023</p>
-                    </div>
-                </div>
-                <!-- Mobile Service Card -->
-                <div class="item">
-                    <div class="payment-card">
-                        <img class="payment-logo" alt="Mobile Service Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Mobile Service</p>
-                        <p class="payment-date">07 Nov 2023</p>
-                    </div>
-                </div>
-                <!-- Mobile Service Card -->
-                <div class="item">
-                    <div class="payment-card">
-                        <img class="payment-logo" alt="Mobile Service Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Mobile Service</p>
-                        <p class="payment-date">07 Nov 2023</p>
-                    </div>
-                </div>
-                 <!-- Mobile Service Card -->
-                 <div class="item">
-                    <div class="payment-card">
-                        <img class="payment-logo" alt="Mobile Service Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
-                        <p class="payment-text">Mobile Service</p>
+                        <img class="payment-logo" alt="To Bank Logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827699922945/Amazon_Prime_Video_Logo_Png_Transparent.png?ex=671d21d1&is=671bd034&hm=2e945d638b1ab1e41bd194abc0e7f75bc5af449905063fb302c2c8d756377f09&"/>
+                        <p class="payment-text">To Bank</p>
                         <p class="payment-date">07 Nov 2023</p>
                     </div>
                 </div>
             </div>
         </div>
-        <footer style="background-color: #A688F9; padding: 20px; text-align: center; color: white; display: flex;   justify-content: space-between;">
-            <p>&copy; 2024 Figloo. All rights reserved.</p>
-            <div>
-                <a href="#" style="color: white; margin: 0 10px;">Privacy Policy</a>
-                <a href="#" style="color: white; margin: 0 10px;">Terms of Service</a>
-                <a href="#" style="color: white; margin: 0 10px;">Contact Us</a>
+        
+        <footer style="background-color: #A688F9; padding: 40px 0; color: white; display: flex;   justify-content: space-between; align-items: center;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                <p style="margin: 0;">&copy; 2024 Figloo. All rights reserved.</p>
+                <p style="margin: 10px 0; font-size: 14px;">Experience the future of subscriptions with crypto!</p>
             </div>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="#" style="color: white; text-decoration: none; transition: color 0.3s;">Privacy Policy</a>
+                <a href="#" style="color: white; text-decoration: none; transition: color 0.3s;">Terms of Service</a>
+                <a href="#" style="color: white; text-decoration: none; transition: color 0.3s;">Contact Us</a>
+            </div>
+           
         </footer>
         
+        <!-- Include Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        
+        <!-- Include Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </div>
     
+    <footer style="background-color: #A688F9; padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <p style="margin: 0;">&copy; 2024 Figloo. All rights reserved.</p>
+            <p style="margin: 10px 0; font-size: 14px;">Experience the future of subscriptions with crypto!</p>
+        </div>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="#" style="color: white; text-decoration: none; transition: color 0.3s;">Privacy Policy</a>
+            <a href="#" style="color: white; text-decoration: none; transition: color 0.3s;">Terms of Service</a>
+            <a href="#" style="color: white; text-decoration: none; transition: color 0.3s;">Contact Us</a>
+        </div>
+       
+    </footer>
+
+    <!-- Netflix Modal Structure -->
+    <div class="modal netflix-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeNetflixModal()">&times;</span>
+            <img alt="Netflix logo" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299418827708436501/Netflix_Logo_Png_Symbol_PNG_Transparent_With_Clear_Background_ID_471554___TopPNG.jpeg?ex=671d2196&is=671bd016&hm=aba9bd4a715dc6edccd0feb44a8fc6877a0310e1f4b76b97568ff82d0ec1df4c&" style="width: 50px; height: 50px;"/>
+            <h 1 style="font-size: 24px; color: #000000; margin: 10px 0;">NETFLIX PLANS</h1>
+            <a href="javascript:void(0);" class="plan2" onclick="handlePayment()">BASIC ₹149/M</a>
+            <a href="javascript:void(0);" class="plan2" onclick="handlePayment()">STANDARD ₹199/M</a>
+            <a href="javascript:void(0);" class="plan2" onclick="handlePayment()">PREMIUM ₹249/M</a>
+        </div>
+    </div>
+
+    <!-- Spotify Modal Structure -->
+    <div class="modal spotify-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSpotifyModal()">&times;</span>
+            <img alt="Spotify logo" src="https://storage.googleapis.com/a1aa/image/WMjy48kVJl4GIJV0cWUqjkkigvIpUmEvrddZeBsbhGpsebqTA.jpg" style="width: 50px; height: 50px;"/>
+            <h1 style="font-size: 24px; color: #000000; margin: 10px 0;">SPOTIFY PLANS</h1>
+            <a href="javascript:void(0);" class="plan1" onclick="handlePayment()">INDIVIDUAL ₹119/M</a>
+            <a href="javascript:void(0);" class="plan1" onclick="handlePayment()">DUO ₹149/M</a>
+            <a href="javascript:void(0);" class="plan1" onclick="handlePayment()">FAMILY ₹179/M</a>
+        </div>
+    </div>
+    <div class="modal disney-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDisneyModal()">&times;</span>
+            <img alt="Disney logo" src="https://www.freepnglogos.com/uploads/disney-logo-png/disney-logo-png-transparent-background-4.png" style="width: 50px; height: 50px;"/>
+            <h1 style="font-size: 24px; color: #000000; margin: 10px 0;">DISNEY+ PLANS</h1>
+            <a href="javascript:void(0);" class="plan3" onclick="handlePayment()"> Mobile Plan ₹499/M</a>
+            <a href="javascript:void(0);" class="plan3" onclick="handlePayment()"> Super Plan ₹899/M</a>
+            <a href="javascript:void(0);" class="plan3" onclick="handlePayment()"> Premium Plan ₹1499/M </a>
+        </div>
+    </div>
+    <div class="modal youtube-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeYouTubeModal()">&times;</span>
+            <img alt="YouTube logo" src="https://www.freepnglogos.com/uploads/youtube-logo-png/youtube-logo-png-transparent-background-4.png" style="width: 50px; height: 50px;"/>
+            <h1 style="font-size: 24px; color: #000000; margin: 10px 0;">YOUTUBE PLANS</h1>
+            <a href="javascript:void(0);" class="plan4" onclick="handlePayment()"> YouTube Premium ₹139/M</a>
+            <a href="javascript:void(0);" class="plan4" onclick="handlePayment()"> YouTube Music ₹99/M</a>
+            <a href="javascript:void(0);" class="plan4" onclick="handlePayment()"> YouTube Premium Family ₹189/M </a>
+        </div>
+    </div>
+    <script>
+        function handlePayment() {
+            window.location.href = 'payment_success.html';
+        }
+
+        function openNetflixModal() {
+            document.querySelector('.netflix-modal').style.display = 'flex';
+        }
+
+        function closeNetflixModal() {
+            document.querySelector('.netflix-modal').style.display = 'none';
+        }
+
+        function openSpotifyModal() {
+            document.querySelector('.spotify-modal').style.display = 'flex';
+        }
+
+        function closeSpotifyModal() {
+            document.querySelector('.spotify-modal').style.display = 'none';
+        }
+
+        function openDisneyModal() {
+            document.querySelector('.disney-modal').style.display = 'flex';
+        }
+
+        function closeDisneyModal() {
+            document.querySelector('.disney-modal').style.display = 'none';
+        }
+
+        function openYouTubeModal() {
+            document.querySelector('.youtube-modal').style.display = 'flex';
+        }
+
+        function closeYouTubeModal() {
+            document.querySelector('.youtube-modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
