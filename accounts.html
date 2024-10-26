@@ -38,6 +38,19 @@
             font-size: 24px;
             color: #000;
         }
+        .back-button {
+            background: linear-gradient(to right, #b39ddb, #9575cd);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            background: linear-gradient(to right, #9575cd, #b39ddb);
+        }
         .content {
             display: flex;
             justify-content: center;
@@ -131,7 +144,7 @@
         }
         .modal-content .error {
             color: red;
-            font-size: 12px;
+            font -size: 12px;
             margin-top: -10px;
             margin-bottom: 10px;
             text-align: left;
@@ -155,6 +168,7 @@
         <div class="header">
             <img alt="Logo" height="50" src="https://cdn.discordapp.com/attachments/1193978235311108117/1299338299487555625/Remove_background_project_11.png?ex=671cd697&is=671b8517&hm=acf333f10b5faf09eb0eaeef999c77ddf94043c32146edcfdfa33e143b1c15df" width="200"/>
             <div class="balance">Balance<br>USD 00.00</div>
+            <button class="back-button" onclick="location.href='./main.html'">Back</button>
         </div>
         <h1 style="font-size: 36px;">Accounts Center</h1>
         <div class="content">
@@ -170,97 +184,96 @@
                 <div class="item add">+ Add Wallet</div>
             </div>
         </div>
-    </div>
 
-    <!-- Modal structure with embedded form -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h1>ADD BANK</h1>
-            <form id="bankForm">
-                <label for="ifsc">IFSC CODE</label>
-                <input type="text" id="ifsc" name="ifsc">
-                <div id="ifscError" class="error"></div>
+        <!-- Modal structure with embedded form -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h1>ADD BANK</h1>
+                <form id="bankForm">
+                    <label for="ifsc">IFSC CODE</label>
+                    <input type="text" id="ifsc" name="ifsc">
+                    <div id="ifscError" class="error"></div>
 
-                <label for="account">ACCOUNT NUMBER</label>
-                <input type="text" id="account" name="account">
-                <div id="accountError" class="error"></div>
+                    <label for="account">ACCOUNT NUMBER</label>
+                    <input type="text" id="account" name="account">
+                    <div id="accountError" class="error"></div>
 
-                <label for="bankname">BANK NAME</label>
-                <input type="text" id="bankname" name="bankname">
-                <div id="banknameError" class="error"></div>
+                    <label for="bankname">BANK NAME</label>
+                    <input type="text" id="bankname" name="bankname">
+                    <div id="banknameError" class="error"></div>
 
-                <button type="submit">Submit</button>
-            </form>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <script>
-        const accounts = []; // Array to hold account details
+        <script>
+            const accounts = []; // Array to hold account details
 
-        // Open modal
-        function openModal() {
-            document.getElementById("myModal").style.display = "block";
-        }
-
-        // Close modal
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-
-        // Close modal on outside click
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("myModal")) {
-                closeModal();
-            }
-        };
-
-        // Form validation and account addition
-        document.getElementById('bankForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('ifscError').textContent = '';
-            document.getElementById('accountError').textContent = '';
-            document.getElementById('banknameError').textContent = '';
-
-            const ifsc = document.getElementById('ifsc').value;
-            const account = document.getElementById('account').value;
-            const bankname = document.getElementById('bankname').value;
-
-            const ifscPattern = /^[A-Z]{4}0[A-Z0-9]{6}$/;
-            const accountPattern = /^[0-9]{9,18}$/;
-            const banknamePattern = /^[A-Za-z\s]{3,}$/;
-
-            let isValid = true;
-
-            if (!ifscPattern.test(ifsc)) {
-                document.getElementById('ifscError').textContent = 'Invalid IFSC code';
-                isValid = false;
-            }
-            if (!accountPattern.test(account)) {
-                document.getElementById('accountError').textContent = 'Invalid account number';
-                isValid = false;
-            }
-            if (!banknamePattern.test(bankname)) {
-                document.getElementById('banknameError').textContent = 'Invalid bank name';
-                isValid = false;
+            // Open modal
+            function openModal() {
+                document.getElementById("myModal").style.display = "block";
             }
 
-            if (isValid) {
-                accounts.push({ ifsc, account, bankname }); // Add account to array
-                addAccountToList(ifsc, account, bankname); // Display the account
-                closeModal(); // Close modal after successful submission
-                document.getElementById('bankForm').reset(); // Reset the form
+            // Close modal
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
             }
-        });
 
-        // Function to display the added account
-        function addAccountToList(ifsc, account, bankname) {
-            const accountList = document.getElementById('accountList');
-            const accountItem = document.createElement('div');
-            accountItem.className = 'item';
-            accountItem.innerHTML = `<strong>${bankname}</strong><br>IFSC: ${ifsc}<br>Account No: ${account}`;
-            accountList.appendChild(accountItem);
-        }
-    </script>
-</body>
+            // Close modal on outside click
+            window.onclick = function(event) {
+                if (event.target == document.getElementById("myModal")) {
+                    closeModal();
+                }
+            };
+
+            // Form validation and account addition
+            document.getElementById('bankForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                document.getElementById('ifscError').textContent = '';
+                document.getElementById('accountError').textContent = '';
+                document.getElementById('banknameError').textContent = '';
+
+                const ifsc = document.getElementById('ifsc').value;
+                const account = document.getElementById('account').value;
+                const bankname = document.getElementById('bankname').value;
+
+                const ifscPattern = /^[A-Z]{4}0[A-Z0-9]{6}$/;
+                const accountPattern = /^[0-9]{9,18}$/;
+                const banknamePattern = /^[A-Za-z\s]{3,}$/;
+
+                let isValid = true;
+
+                if (!ifscPattern.test(ifsc)) {
+                    document.getElementById('ifscError').textContent = 'Invalid IFSC code';
+                    isValid = false;
+                }
+                if (!accountPattern.test(account)) {
+                    document.getElementById('accountError').textContent = 'Invalid account number';
+                    isValid = false;
+                }
+                if (!banknamePattern.test(bankname)) {
+                    document.getElementById('banknameError').textContent = 'Invalid bank name';
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    accounts .push({ ifsc, account, bankname }); // Add account to array
+                    addAccountToList(ifsc, account, bankname); // Display the account
+                    closeModal(); // Close modal after successful submission
+                    document.getElementById('bankForm').reset(); // Reset the form
+                }
+            });
+
+            // Function to display the added account
+            function addAccountToList(ifsc, account, bankname) {
+                const accountList = document.getElementById('accountList');
+                const accountItem = document.createElement('div');
+                accountItem.className = 'item';
+                accountItem.innerHTML = `<strong>${bankname}</strong><br>IFSC: ${ifsc}<br>Account No: ${account}`;
+                accountList.appendChild(accountItem);
+            }
+        </script>
+    </body>
 </html>
